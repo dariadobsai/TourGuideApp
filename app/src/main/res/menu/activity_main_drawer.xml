@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/places"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/places" />
+        <item
+            android:id="@+id/cafes"
+            android:icon="@drawable/restaurant"
+            android:title="@string/cafes" />
+        <item
+            android:id="@+id/hotels"
+            android:icon="@drawable/hotel"
+            android:title="@string/hotels" />
+        <item
+            android:id="@+id/language"
+            android:icon="@drawable/language"
+            android:title="@string/phrases" />
+    </group>
+
+</menu>

@@ -1,6 +1,5 @@
 package com.example.android.tourapp;
 
-
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -19,7 +18,7 @@ public class PhrasesFragment extends Fragment {
     View view;
     PhrasesAdapter listAdapter;
     ListView listView;
-    ListPhrases word;
+    List word;
     private MediaPlayer mMediaPlayer;
     private AudioManager mAudioManager;
 
@@ -58,19 +57,19 @@ public class PhrasesFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.list, container, false);
         mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
-        final ArrayList<ListPhrases> phrases = new ArrayList<>();
-        phrases.add(new ListPhrases(R.string.french_1, R.string.english_1, R.raw.hello));
-        phrases.add(new ListPhrases(R.string.french_2, R.string.english_2, R.raw.thankyou));
-        phrases.add(new ListPhrases(R.string.french_3, R.string.english_3, R.raw.please));
-        phrases.add(new ListPhrases(R.string.french_4, R.string.english_4, R.raw.goodbye));
-        phrases.add(new ListPhrases(R.string.french_5, R.string.english_5, R.raw.lookingfor));
-        phrases.add(new ListPhrases(R.string.french_6, R.string.english_6, R.raw.wheretoilet));
-        phrases.add(new ListPhrases(R.string.french_7, R.string.english_7, R.raw.toairport));
-        phrases.add(new ListPhrases(R.string.french_8, R.string.english_8, R.raw.lost));
-        phrases.add(new ListPhrases(R.string.french_9, R.string.english_9, R.raw.cabplease));
-        phrases.add(new ListPhrases(R.string.french_10, R.string.english_10, R.raw.roomfortwo));
-        phrases.add(new ListPhrases(R.string.french_11, R.string.english_11, R.raw.howmuch));
-        phrases.add(new ListPhrases(R.string.french_12, R.string.english_12, R.raw.atm));
+        final ArrayList<List> phrases = new ArrayList<>();
+        phrases.add(new List(R.string.french_1, R.string.english_1, R.raw.hello));
+        phrases.add(new List(R.string.french_2, R.string.english_2, R.raw.thankyou));
+        phrases.add(new List(R.string.french_3, R.string.english_3, R.raw.please));
+        phrases.add(new List(R.string.french_4, R.string.english_4, R.raw.goodbye));
+        phrases.add(new List(R.string.french_5, R.string.english_5, R.raw.lookingfor));
+        phrases.add(new List(R.string.french_6, R.string.english_6, R.raw.wheretoilet));
+        phrases.add(new List(R.string.french_7, R.string.english_7, R.raw.toairport));
+        phrases.add(new List(R.string.french_8, R.string.english_8, R.raw.lost));
+        phrases.add(new List(R.string.french_9, R.string.english_9, R.raw.cabplease));
+        phrases.add(new List(R.string.french_10, R.string.english_10, R.raw.roomfortwo));
+        phrases.add(new List(R.string.french_11, R.string.english_11, R.raw.howmuch));
+        phrases.add(new List(R.string.french_12, R.string.english_12, R.raw.atm));
 
         listAdapter = new PhrasesAdapter(getActivity(), phrases);
 
@@ -81,6 +80,7 @@ public class PhrasesFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
                 // Release the media player if it currently exists because we are about to
                 // play a different sound file
                 releaseMediaPlayer();
@@ -95,7 +95,7 @@ public class PhrasesFragment extends Fragment {
                     // We have audio focus now.
                     // Create and setup the {@link MediaPlayer} for the audio resource associated
                     // with the current word
-                    mMediaPlayer = MediaPlayer.create(getActivity(),word.getSound());
+                    mMediaPlayer = MediaPlayer.create(getActivity(),word.getInfo());
 
                     // Start the audio file
                     mMediaPlayer.start();
@@ -118,8 +118,7 @@ public class PhrasesFragment extends Fragment {
         releaseMediaPlayer();
     }
 
-      // Clean up the media player by releasing its resources.
-
+    // Clean up the media player by releasing its resources.
     private void releaseMediaPlayer() {
         // If the media player is not null, then it may be currently playing a sound.
         if (mMediaPlayer != null) {

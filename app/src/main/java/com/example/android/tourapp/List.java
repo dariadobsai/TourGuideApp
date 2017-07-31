@@ -2,25 +2,25 @@ package com.example.android.tourapp;
 
 class List {
 
-    private int name;
-    private int address;
-    private int image;
+    private int info;
+    private int info2;
+    private int info3;
 
-    List(int image, int name, int address) {
-        this.image = image;
-        this.name = name;
-        this.address = address;
+    List(int info, int info2, int info3) {
+        this.info = info;
+        this.info2 = info2;
+        this.info3 = info3;
     }
 
-    int getPicture() {
-        return image;
+    int getInfo() {
+        return info;
     }
 
-    int getName() {
-        return name;
+    int getInfo2() {
+        return info2;
     }
 
-    int getAddress() {
-        return address;
+    int getInfo3() {
+        return info3;
     }
 }

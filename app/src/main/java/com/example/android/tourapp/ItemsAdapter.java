@@ -6,12 +6,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 class ItemsAdapter extends FragmentPagerAdapter {
 
-    // private Context mContext;
-
     ItemsAdapter(FragmentManager fm) {
         super(fm);
-       // mContext = context;
     }
+
     // Assign the number of fragments
     @Override
     public int getCount() {

@@ -16,34 +16,30 @@ import butterknife.ButterKnife;
 
 class ListAdapter extends ArrayAdapter<List> {
 
-   private TextView placeNameTextView;
-   private TextView descriptionTextView;
-   private ImageView imageView;
-
     ListAdapter(@NonNull Activity context, ArrayList<List> places) {
         super(context, 0, places);
     }
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        // check if the current view is reused else inflate the view
-        View listItemView = convertView;
+    public View getView(int position, @Nullable View listItemView, @NonNull ViewGroup parent) {
 
+        // Check if the current view is reused else inflate the view
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_layout, parent, false);
         }
 
-        //get the object located at position
-        List place_item = getItem(position);
-        placeNameTextView = ButterKnife.findById(listItemView, R.id.place_name);
-        descriptionTextView = ButterKnife.findById(listItemView, R.id.place_descrip);
-        imageView = ButterKnife.findById(listItemView, R.id.pic);
+        // Get the object located at position
+        List placeItem = getItem(position);
+        TextView placeName = ButterKnife.findById(listItemView, R.id.place_name);
+        TextView placeDescription = ButterKnife.findById(listItemView, R.id.place_descrip);
+        ImageView placeImage = ButterKnife.findById(listItemView, R.id.pic);
 
-        assert place_item != null;
-        placeNameTextView.setText(place_item.getName());
-        descriptionTextView.setText(place_item.getAddress());
-        imageView.setImageResource(place_item.getPicture());
+        assert placeItem != null;
+        placeName.setText(placeItem.getInfo2());
+        placeDescription.setText(placeItem.getInfo3());
+        placeImage.setImageResource(placeItem.getInfo());
+
         return listItemView;
     }
 }

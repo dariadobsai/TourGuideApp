@@ -1,4 +1,7 @@
 <resources>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -11,18 +14,13 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-    <!-- text in "nav_header_main"-->
-
+    <!-- Text in the "nav_header_main"-->
     <style name="headerText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerInParent">true</item>
         <item name="android:layout_toEndOf">@id/imageView</item>
-        <item name="android:textColor">@color/tab_text</item>
+        <item name="android:textColor">@color/tabText</item>
     </style>
 
     <style name="headerText.Title">
@@ -45,8 +43,7 @@
 
     </style>
 
-    <!-- style for all images-->
-
+    <!-- Style for all Images-->
     <style name="image">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -72,56 +69,51 @@
         <item name="android:layout_marginEnd">@dimen/value_15dp</item>
     </style>
 
-    <!--style for all titles/names-->
-
+    <!-- Style for all titles/names-->
     <style name="titleText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/value_5dp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/value_18sp</item>
-        <item name="android:textColor">@color/tab_text</item>
+        <item name="android:textColor">@color/tabText</item>
     </style>
 
     <style name="titleText.Phrases">
-        <item name="android:textColor">@color/title_text</item>
+        <item name="android:textColor">@color/titleText</item>
         <item name="android:layout_toEndOf">@id/pic</item>
     </style>
 
     <style name="titleText.Tab">
         <item name="android:layout_toEndOf">@id/place</item>
-        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:textColor">@color/textDark</item>
         <item name="android:textSize">@dimen/value_16sp</item>
     </style>
 
-    <!-- style for addresses and other information-->
-
+    <!-- Style for addresses and other information-->
     <style name="description">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/tab_text</item>
+        <item name="android:textColor">@color/tabText</item>
         <item name="android:layout_margin">@dimen/value_3dp</item>
         <item name="android:layout_below">@id/french</item>
         <item name="android:textSize">@dimen/value_15sp</item>
     </style>
 
-
     <style name="description.2">
-        <item name="android:textColor">@color/adress_text</item>
+        <item name="android:textColor">@color/addressText</item>
         <item name="android:layout_toEndOf">@id/pic</item>
         <item name="android:layout_below">@id/place_name</item>
         <item name="android:textSize">@dimen/value_13sp</item>
     </style>
 
     <!--Text description for Tabs-->
-
     <style name="description.3">
-        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:textColor">@color/textDark</item>
         <item name="android:layout_toEndOf">@id/place</item>
         <item name="android:layout_below">@id/name</item>
         <item name="android:textSize">@dimen/value_13sp</item>
         <item name="android:autoLink">web|phone</item>
         <item name="android:textColorLink">@color/colorPrimary</item>
     </style>
-
 </resources>

@@ -8,32 +8,34 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
 import java.util.ArrayList;
+
 import butterknife.ButterKnife;
 
-class PhrasesAdapter extends ArrayAdapter<ListPhrases> {
+class PhrasesAdapter extends ArrayAdapter<List> {
 
-    TextView placeNameTextView;
-    TextView descriptionTextView;
-
-    PhrasesAdapter(@NonNull Activity context, ArrayList<ListPhrases> phrases) {
+    PhrasesAdapter(@NonNull Activity context, ArrayList<List> phrases) {
         super(context, 0, phrases);
     }
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View listItemView = convertView;
+    public View getView(int position, @Nullable View listItemView, @NonNull ViewGroup parent) {
 
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_phrases, parent, false);
         }
-        ListPhrases place_item = getItem(position);
-        placeNameTextView = ButterKnife.findById(listItemView, R.id.french);
-        descriptionTextView = ButterKnife.findById(listItemView, R.id.english);
-        assert place_item != null;
-        placeNameTextView.setText(place_item.getFrench());
-        descriptionTextView.setText(place_item.getEnglish());
+
+        List placeItem = getItem(position);
+
+        TextView placeName = ButterKnife.findById(listItemView, R.id.french);
+        TextView placeDescription = ButterKnife.findById(listItemView, R.id.english);
+
+        assert placeItem != null;
+        placeName.setText(placeItem.getInfo());
+        placeDescription.setText(placeItem.getInfo2());
+
         return listItemView;
     }
 }

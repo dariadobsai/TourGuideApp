@@ -7,5 +7,4 @@
     android:layout_marginTop="@dimen/value_5dp"
     android:orientation="vertical"
     android:scrollbarThumbVertical="@drawable/scroll">
-
 </ListView>
